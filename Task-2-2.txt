@@ -1,0 +1,11 @@
+A radar station scans mountain terrain. A sequence of positive
+integer heights is entered; 0 - marks the end of input and is not a
+height. A peak is a height strictly greater than both neighbors.
+Count the number of peaks. The sequence contains at least three
+heights.
+
+Радарная станция сканирует горный рельеф. Вводится
+последовательность целых положительных высот; 0 - конец
+ввода (не является высотой). Пик - это высота, строго
+большая обоих соседей. Подсчитай количество пиков.
+Последовательность содержит не менее трёх высот.

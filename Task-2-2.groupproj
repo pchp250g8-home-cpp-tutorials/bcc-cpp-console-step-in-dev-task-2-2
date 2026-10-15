@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{DDD93082-EF05-4193-86B9-F1611C64455E}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Task-2-2-ru\Task-2-2-ru.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Task-2-2-en\Task-2-2-en.cbproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Task-2-2-ru">
+        <MSBuild Projects="Task-2-2-ru\Task-2-2-ru.cbproj"/>
+    </Target>
+    <Target Name="Task-2-2-ru:Clean">
+        <MSBuild Projects="Task-2-2-ru\Task-2-2-ru.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Task-2-2-ru:Make">
+        <MSBuild Projects="Task-2-2-ru\Task-2-2-ru.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="Task-2-2-en">
+        <MSBuild Projects="Task-2-2-en\Task-2-2-en.cbproj"/>
+    </Target>
+    <Target Name="Task-2-2-en:Clean">
+        <MSBuild Projects="Task-2-2-en\Task-2-2-en.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Task-2-2-en:Make">
+        <MSBuild Projects="Task-2-2-en\Task-2-2-en.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Task-2-2-ru;Task-2-2-en"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Task-2-2-ru:Clean;Task-2-2-en:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Task-2-2-ru:Make;Task-2-2-en:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
